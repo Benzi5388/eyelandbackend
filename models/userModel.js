@@ -20,7 +20,12 @@ const userSchema = new mongoose.Schema({
    isVerified :{
     type:Boolean,
     default:false
-   }
+   },
+   otp: {
+      type: Number,
+      default: Date.now,
+      expires: '15m'
+    }
 })
 
 export default mongoose.model('user', userSchema)
